@@ -1,0 +1,17 @@
+.peint_container {
+  width: 80%;
+  padding-top: 2%;
+  margin: auto;
+
+  .peint_divider {
+    display: flex;
+    flex-direction: row;
+    margin-top: 2%;
+    gap: 5%;
+
+    .canvas_container {
+      width: 70%;
+      border: 1px solid black;
+    }
+  }
+}
