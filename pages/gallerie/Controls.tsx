@@ -1,17 +1,15 @@
 import { useFrame } from "@react-three/fiber";
 import React, { useRef, useState, useEffect } from "react";
-import { Html, PointerLockControls } from "@react-three/drei";
+import { PointerLockControls } from "@react-three/drei";
 import * as THREE from "three";
-import { PerspectiveCamera } from "@react-three/drei";
 
-const Controls = () => {
-  const controlsRef = useRef<any>();
-  const isLocked = useRef(false);
-  const [moveForward, setMoveForward] = useState(false);
-  const [moveBackward, setMoveBackward] = useState(false);
-  const [moveLeft, setMoveLeft] = useState(false);
-  const [moveRight, setMoveRight] = useState(false);
-  const [cameraPosition, setCameraPosition] = useState(new THREE.Vector3());
+const ControlsFrame: React.FC<{
+  moveForward: boolean;
+  moveBackward: boolean;
+  moveLeft: boolean;
+  moveRight: boolean;
+  controlsRef: any;
+}> = ({ moveForward, moveBackward, moveLeft, moveRight, controlsRef }) => {
   useFrame(({ camera }) => {
     const velocity = 0.2;
     if (
@@ -34,8 +32,18 @@ const Controls = () => {
       camera.position.z = 0;
       camera.position.y = 0;
     }
-    setCameraPosition(camera.position);
   });
+
+  return null;
+};
+
+const Controls = () => {
+  const controlsRef = useRef<any>();
+  const isLocked = useRef(false);
+  const [moveForward, setMoveForward] = useState(false);
+  const [moveBackward, setMoveBackward] = useState(false);
+  const [moveLeft, setMoveLeft] = useState(false);
+  const [moveRight, setMoveRight] = useState(false);
 
   const onKeyDown = function (event: KeyboardEvent) {
     switch (event.key) {
@@ -101,7 +109,7 @@ const Controls = () => {
   }, []);
 
   return (
-    <group>
+    <>
       <PointerLockControls
         onUpdate={() => {
           if (controlsRef.current) {
@@ -117,21 +125,14 @@ const Controls = () => {
         }}
         ref={controlsRef}
       />
-      {/* <Html position={cameraPosition} style={{ pointerEvents: "none" }}>
-        <div
-          style={{
-            width: "10px",
-            height: "10px",
-            backgroundColor: "red",
-            position: "fixed",
-            top: `calc(50% - ${cameraPosition.y}px)`,
-            left: `calc(50% + ${cameraPosition.x}px)`,
-            transform: "translate(-50%, -50%)",
-            zIndex: 1000,
-          }}
-        ></div>
-      </Html> */}
-    </group>
+      <ControlsFrame
+        moveForward={moveForward}
+        moveBackward={moveBackward}
+        moveLeft={moveLeft}
+        moveRight={moveRight}
+        controlsRef={controlsRef}
+      />
+    </>
   );
 };
 
