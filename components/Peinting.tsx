@@ -1,10 +1,17 @@
 import { Vector3, extend, useFrame, useLoader } from "@react-three/fiber";
 import { peintureInterface } from "@/interface/peintureInterface";
 import { useState, useEffect, useContext } from "react";
-import { Html, Plane, useNormalTexture, useTexture } from "@react-three/drei";
+import {
+  Box,
+  Html,
+  Plane,
+  useNormalTexture,
+  useTexture,
+} from "@react-three/drei";
 import * as THREE from "three";
 import { CharacterContext } from "@/context/CharacterContext";
 import { peitureData } from "@/assets/peintureData";
+import CadreMap from "@/assets/cadre/VeneerWhiteOakRandomMatched001_COL_2K_METALNESS.png";
 
 interface props extends peintureInterface {
   index: number;
@@ -33,9 +40,10 @@ const Painting: React.FC<props> = ({
       ? position[2]
       : position[2] < 0
       ? position[2] + 0.2
-      : position[2] - 0.2,
+      : position[2] - 0.15,
   ];
   const texture = useTexture({ map: img });
+  const cadreTexture = useTexture({ map: CadreMap.src });
   const vecRotation = new THREE.Euler().fromArray(rotation);
   const vecPosition = new THREE.Vector3().fromArray(position);
   const vecPeinting = new THREE.Vector3().fromArray(paintingPos);
@@ -65,38 +73,20 @@ const Painting: React.FC<props> = ({
     };
   }, [showLabel]);
 
-  const [normalMap, url] = useNormalTexture(1, {
-    offset: [0, 0],
-    repeat: [1, 1],
-    anisotropy: 8,
-  });
-
   return (
     <group>
       <Plane position={vecPeinting} rotation={vecRotation} args={[10, 10]}>
-        <meshStandardMaterial
-          side={THREE.DoubleSide}
-          {...texture}
-          // normalMap={normalMap}
-        />
+        <meshStandardMaterial side={THREE.DoubleSide} {...texture} />
       </Plane>
-      <mesh
+      <Box
+        args={[10.2, 10.2, 0.2]}
         position={vecPosition}
         rotation={vecRotation}
-        scale={[1.1, 1.1, 1]}
+        scale={[1.01, 1.01, 1]}
         castShadow
       >
-        <boxGeometry args={[10.5, 10.5, 0.2]} />
-        <meshBasicMaterial color="brown" />
-      </mesh>
-      {/* <mesh
-        position={vecPeinting}
-        scale={!_active ? [1.05, 1.05, 1] : [1, 1, 1]}
-        rotation={vecRotation}
-      >
-        <planeGeometry args={[10, 10]} />
-        <meshBasicMaterial map={texture} />
-      </mesh> */}
+        <meshStandardMaterial {...cadreTexture} />
+      </Box>
       {showLabel && (
         <>
           <Html position={[position[0] + 6, position[1], position[2]]}>
