@@ -8,7 +8,7 @@ import Wall from "@/components/Wall";
 import Plane from "@/components/Plane";
 import Painting from "@/components/Peinting";
 import UIContainer from "@/components/UiContainer";
-import Controls from "./Controls";
+import Controls from "../../components/Controls";
 import Floor from "@/components/Plane";
 
 //Opti avoir 1 seul useFrame dans le projet
@@ -31,7 +31,7 @@ const Zoom: React.FC<any> = ({ cameraRef, zoom }) => {
 const App = () => {
   const [zoom, setZoom] = useState(false);
   const cameraRef = useRef<THREE.PerspectiveCamera>();
-
+  //C
   return (
     <>
       <UIContainer />
@@ -44,7 +44,6 @@ const App = () => {
       >
         <ambientLight intensity={1} />
         <fog attach={"fog"} args={["black", 60, 100]} />
-        {/* <directionalLight intensity={0.9} position={[10, 0, 0]} /> */}
         <spotLight
           args={["#ffffff", 1.5, 7, (Math.PI / 180) * 45, 0.4]}
           position={[-3, 1, 0]}
@@ -59,12 +58,10 @@ const App = () => {
             peitureData.map((peinture, i) => (
               <group key={i}>
                 <spotLight
-                  intensity={50}
-                  color={"red"}
+                  intensity={150}
+                  color={"#e3d2ca"}
                   position={new THREE.Vector3().fromArray(peinture.position)}
                   angle={Math.PI}
-                  // rotation={[Math.PI / 2, 0, 0]}
-                  // position={new THREE.Vector3().fromArray(peinture.position)}
                 />
 
                 <Painting
