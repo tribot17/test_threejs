@@ -10,7 +10,6 @@ import Painting from "@/components/Peinting";
 import UIContainer from "@/components/UiContainer";
 import Controls from "../../components/Controls";
 import Floor from "@/components/Plane";
-import LoadingScreen from "@/components/LoadingScreen";
 import { Spinner } from "@chakra-ui/react";
 
 //Opti avoir 1 seul useFrame dans le projet
