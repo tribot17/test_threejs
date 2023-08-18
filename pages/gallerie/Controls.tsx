@@ -14,16 +14,26 @@ const Controls = () => {
   const [cameraPosition, setCameraPosition] = useState(new THREE.Vector3());
   useFrame(({ camera }) => {
     const velocity = 0.2;
-    if (moveForward) {
-      controlsRef.current?.moveForward(velocity);
-    } else if (moveLeft) {
-      controlsRef.current.moveRight(-velocity);
-    } else if (moveBackward) {
-      controlsRef.current.moveForward(-velocity);
-    } else if (moveRight) {
-      controlsRef.current.moveRight(velocity);
+    if (
+      camera.position.z + velocity > -25 &&
+      camera.position.z + velocity < 25 &&
+      camera.position.x + velocity > -25 &&
+      camera.position.x + velocity < 25
+    ) {
+      if (moveForward) {
+        controlsRef.current?.moveForward(velocity);
+      } else if (moveLeft) {
+        controlsRef.current.moveRight(-velocity);
+      } else if (moveBackward) {
+        controlsRef.current.moveForward(-velocity);
+      } else if (moveRight) {
+        controlsRef.current.moveRight(velocity);
+      }
+    } else {
+      camera.position.x = 0;
+      camera.position.z = 0;
+      camera.position.y = 0;
     }
-
     setCameraPosition(camera.position);
   });
 
