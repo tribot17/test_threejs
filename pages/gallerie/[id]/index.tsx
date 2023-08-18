@@ -86,6 +86,20 @@ const PeitingDetailPage = () => {
                       {data?.text.description}
                     </Text>
                   </Box>
+                  <Box>
+                    <Heading size="xs" textTransform="uppercase">
+                      En savoir plus
+                    </Heading>
+                    <Text pt="2" fontSize="sm">
+                      <a
+                        href="data?.link"
+                        target="_blank"
+                        style={{ color: "blue", textDecoration: "underline" }}
+                      >
+                        {data?.link}
+                      </a>
+                    </Text>
+                  </Box>
                 </Stack>
               </Stack>
             </CardBody>
@@ -94,6 +108,7 @@ const PeitingDetailPage = () => {
             style={{
               width: "100%",
               minHeight: "50vh",
+              maxHeight: "80vh",
               height: "auto",
               background: "lightblue",
             }}
