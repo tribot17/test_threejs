@@ -7,8 +7,8 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Reskue test</title>
-        <meta name="description" content="Test techique reskue" />
+        <title>Test three js</title>
+        <meta name="description" content="Test Three js" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <div style={{ height: "100vh" }}>
