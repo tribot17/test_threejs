@@ -43,9 +43,11 @@ const PeitingDetailPage = () => {
     <div>
       {/* <Navbar /> */}
       <div className={styles.peint_container}>
-        <Button colorScheme="teal" size="lg">
-          <Link href={"/gallerie"}>RETOUR DANS LA GALLERIE</Link>
-        </Button>
+        <Link href={"/gallerie"}>
+          <Button colorScheme="teal" size="lg">
+            RETOUR DANS LA GALLERIE
+          </Button>
+        </Link>
         <div className={styles.peint_divider}>
           <Card width={"50%"} height={"auto"}>
             <CardHeader>

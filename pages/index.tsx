@@ -45,17 +45,19 @@ export default function CallToActionWithAnnotation() {
             position={"relative"}
           >
             <Text as="b">Cliquer sur le boutton ci-dessous pour commencer</Text>
-            <Button
-              colorScheme={"green"}
-              bg={"green.400"}
-              rounded={"full"}
-              px={6}
-              _hover={{
-                bg: "green.500",
-              }}
-            >
-              <Link href={"/gallerie"}>Entrer</Link>
-            </Button>
+            <Link href={"/gallerie"}>
+              <Button
+                colorScheme={"green"}
+                bg={"green.400"}
+                rounded={"full"}
+                px={6}
+                _hover={{
+                  bg: "green.500",
+                }}
+              >
+                Entrer
+              </Button>
+            </Link>
           </Stack>
         </Stack>
       </Container>
