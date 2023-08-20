@@ -39,7 +39,7 @@ const App = () => {
     <>
       <div
         style={
-          progress === 100
+          progress === 101
             ? { visibility: "hidden", height: "0" }
             : {
                 display: "flex",
@@ -51,11 +51,30 @@ const App = () => {
               }
         }
       >
-        <Spinner />
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Spinner />
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <progress value={progress} max={"100"}></progress>
+            <h1>{progress}</h1>
+          </div>
+        </div>
       </div>
       <div style={{ visibility: progress === 100 ? "visible" : "hidden" }}>
-        <UIContainer />
-
+        <UIContainer display={progress === 100 ? true : false} />
         <Canvas
           style={{ width: "100%", height: "100vh" }}
           shadows
