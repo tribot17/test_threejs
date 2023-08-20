@@ -39,7 +39,7 @@ const App = () => {
     <>
       <div
         style={
-          progress === 101
+          progress === 100
             ? { visibility: "hidden", height: "0" }
             : {
                 display: "flex",
