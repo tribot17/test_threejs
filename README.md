@@ -1,34 +1,24 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Test Three_JS / Drei / Fiber
 
-## Getting Started
+## **Procédure de démarage**
 
-First, run the development server:
+Pour utiliser l'application vous avez 2 choix :
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+### premier choix
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Cloner ce répo via la commande :
+_git clone git@github.com:tribot17/test_threejs.git_
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### second choix
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Ou vous rendre sur ce lien :
+*https://test-threejs-mauve.vercel.app/*
 
-## Learn More
+### Controles
 
-To learn more about Next.js, take a look at the following resources:
+- Pour vous déplacement dans la galerie vous allez pouvoir utiliser les touches Z pour avancer S pour reculer puis Q pour aller à gauche et D pour aller à droit.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Vous pourrez zoomer sur une œuvre d'art en cliquant dessus.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Si vous êtes assez proche d'une œuvre d'art vous pouvez appuyer sur la touche E pour avoir plus de détails sur celle-ci
+  Sur cette page de détails, vous allez également pouvoir manipuler l'œuvre dans un espace 3D.
