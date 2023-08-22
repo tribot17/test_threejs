@@ -14,7 +14,6 @@ import {
 } from "@chakra-ui/react";
 import { Canvas } from "@react-three/fiber";
 import Link from "next/link";
-import Navbar from "@/components/Navbar";
 import styles from "./idPage.module.scss";
 import { Box, OrbitControls, Plane, useTexture } from "@react-three/drei";
 import * as THREE from "three";
