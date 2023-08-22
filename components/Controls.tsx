@@ -1,7 +1,6 @@
 import { useFrame } from "@react-three/fiber";
 import React, { useRef, useState, useEffect } from "react";
 import { PointerLockControls } from "@react-three/drei";
-import * as THREE from "three";
 
 const ControlsFrame: React.FC<{
   moveForward: boolean;

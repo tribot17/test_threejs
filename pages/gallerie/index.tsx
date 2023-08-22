@@ -1,7 +1,7 @@
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Physics } from "@react-three/cannon";
-import { Loader, useProgress } from "@react-three/drei";
-import { useRef, useState, useEffect } from "react";
+import { useProgress } from "@react-three/drei";
+import { useRef, useState } from "react";
 import { peitureData } from "@/assets/peintureData";
 import * as THREE from "three";
 import Wall from "@/components/Wall";
@@ -60,17 +60,6 @@ const App = () => {
           }}
         >
           <Spinner />
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <progress value={progress} max={"100"}></progress>
-            <h1>{progress}</h1>
-          </div>
         </div>
       </div>
       <div style={{ visibility: progress === 100 ? "visible" : "hidden" }}>

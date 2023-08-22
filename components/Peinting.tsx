@@ -1,16 +1,9 @@
-import { Vector3, extend, useFrame, useLoader } from "@react-three/fiber";
+import { Vector3, useFrame } from "@react-three/fiber";
 import { peintureInterface } from "@/interface/peintureInterface";
 import { useState, useEffect, useContext } from "react";
-import {
-  Box,
-  Html,
-  Plane,
-  useNormalTexture,
-  useTexture,
-} from "@react-three/drei";
-import * as THREE from "three";
+import { Box, Html, Plane, useTexture } from "@react-three/drei";
 import { CharacterContext } from "@/context/CharacterContext";
-import { peitureData } from "@/assets/peintureData";
+import * as THREE from "three";
 import CadreMap from "@/assets/cadre/VeneerWhiteOakRandomMatched001_COL_2K_METALNESS.png";
 
 interface props extends peintureInterface {
@@ -27,7 +20,6 @@ const Painting: React.FC<props> = ({
   const { setActive } = useContext(CharacterContext);
   const [showLabel, setShowLabel] = useState(false);
   const [_active, set_Active] = useState(false);
-  const [cameraPos, setCameraPosition] = useState<Vector3>();
 
   const paintingPos = [
     position[2] != 0
@@ -58,7 +50,6 @@ const Painting: React.FC<props> = ({
     const paintingPosition = new THREE.Vector3().fromArray(position);
     const distance = cameraPosition.distanceTo(paintingPosition);
 
-    setCameraPosition(cameraPosition);
     setShowLabel(distance < 15);
   });
 

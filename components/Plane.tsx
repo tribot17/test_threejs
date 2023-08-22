@@ -1,7 +1,4 @@
-import { usePlane } from "@react-three/cannon";
-import { useLoader } from "@react-three/fiber";
 import { Plane, useTexture } from "@react-three/drei";
-import * as THREE from "three";
 import floor from "@/assets/floor/historical-parquet-01-diffuse.png";
 import floorDisplace from "@/assets/floor/historical-parquet-01-displacement.jpg";
 import floorNormal from "@/assets/floor/historical-parquet-01-normal.png";
