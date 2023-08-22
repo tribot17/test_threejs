@@ -1,15 +1,24 @@
 # Test Three_JS / Drei / Fiber
 
+---
+
 ## **Procédure de démarage**
 
 Pour utiliser l'application vous avez 2 choix :
 
-### premier choix
+### Premier choix
 
 Cloner ce répo via la commande :
+
 _git clone git@github.com:tribot17/test_threejs.git_
 
-### second choix
+_cd test_threejs_
+
+_npm i_
+
+_npm run dev_
+
+### Second choix
 
 Ou vous rendre sur ce lien :
 *https://test-threejs-mauve.vercel.app/*
