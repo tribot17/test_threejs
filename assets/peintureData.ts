@@ -11,7 +11,7 @@ export const peitureData: peintureInterface[] = [
     img: painting2.src,
     text: {
       date: "1489-1490",
-      titre: "  ",
+      titre: "L'Annonciation du Cestello",
       peintre: "Sandro Botticelli",
       description: `L'Annonciation dite du Cestello (en italien Annunciazione di Cestello) est une peinture de Sandro Botticelli réalisée en 1489 et 1490 en tempera sur un panneau de 150
       × 156 cm, restaurée en 1978 et conservée au musée des Offices de

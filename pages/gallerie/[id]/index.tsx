@@ -68,7 +68,7 @@ const PeitingDetailPage = () => {
                       Titre
                     </Heading>
                     <Text pt="2" fontSize="sm">
-                      {data?.text.date}
+                      {data?.text.titre}
                     </Text>
                   </Box>
                   <Box>
